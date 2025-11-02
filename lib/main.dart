@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
+import 'package:mini_movies/core/cache/hive_service.dart';
 import 'package:mini_movies/core/cubits/theme_cubit.dart';
 import 'package:mini_movies/core/di/service_locator.dart';
 import 'package:mini_movies/core/theme/app_theme.dart';
@@ -17,6 +18,7 @@ import 'package:path_provider/path_provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await setupServiceLocator();
+  await MovieHiveService.moviesBox;
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
         ? HydratedStorageDirectory.web

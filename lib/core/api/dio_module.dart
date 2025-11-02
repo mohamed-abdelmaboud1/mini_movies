@@ -15,8 +15,8 @@ class DioModule {
 
     dio.options
       ..baseUrl = ApiEndpoints.baseUrl
-      ..connectTimeout = const Duration(seconds: 10)
-      ..receiveTimeout = const Duration(seconds: 10)
+      ..connectTimeout = const Duration(seconds: 60)
+      ..receiveTimeout = const Duration(seconds: 60)
       ..queryParameters = {
         'api_key': ApiEndpoints.apiKey,
         'language': ApiEndpoints.language,
